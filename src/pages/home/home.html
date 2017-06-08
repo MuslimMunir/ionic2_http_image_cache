@@ -5,13 +5,28 @@
 </ion-header>
 
 <ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+  <div *ngIf="!loading">
+    <ion-list>
+      <ion-item *ngFor="let movie of movies" text-wrap>
+        <h1 class="text-center">{{movie.headline}}</h1>
+        <h4>{{movie.synopsis}}</h4>
+        <p>{{movie.body}}</p>
+        <ion-slides autoplay="100">
+
+          <ion-slide *ngFor="let card of movie.cardImages">
+            <img-loader useImg spinner="true" [src]="card.url" width="100%" fallback="assets/no-img.png"></img-loader>
+          </ion-slide>
+
+        </ion-slides>
+        <h2>Key Art Images</h2>
+        <ion-slides>
+
+          <ion-slide *ngFor="let keyArtImage of movie.keyArtImages">
+            <img-loader useImg spinner="true" src="https://www.w3schools.com/css/trolltunga.jpg" width="100%" fallback="assets/no-img.png"></img-loader>
+          </ion-slide>
+
+        </ion-slides>
+      </ion-item>
+    </ion-list>
+  </div>
 </ion-content>
