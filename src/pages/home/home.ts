@@ -3,7 +3,6 @@ import { CustomHttp } from '../../services/http.service';
 
 import { Movie } from '../../models/movie';
 
-
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
@@ -14,7 +13,7 @@ export class HomePage {
   constructor(public customHttp: CustomHttp) {
 
     this.loading = true;
-    this.customHttp.get('http://s3.amazonaws.com/vodassets/showcase.json').subscribe(data => {
+    this.customHttp.get('showcase.json').subscribe(data => {
       this.loading = false;
       this.movies = data;
     })

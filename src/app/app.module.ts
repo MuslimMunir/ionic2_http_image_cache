@@ -17,9 +17,11 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { HttpModule } from '@angular/http';
 import { CacheModule } from "ionic-cache";
 import { IonicImageLoader } from 'ionic-image-loader';
+import { LoaderComponent } from '../components/loader/loader.component';
 
 @NgModule({
   declarations: [
+    LoaderComponent,
     MyApp,
     AboutPage,
     ContactPage,

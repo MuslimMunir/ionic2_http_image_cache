@@ -5,6 +5,7 @@
 </ion-header>
 
 <ion-content padding>
+  <loader [loading]="loading"></loader>
   <div *ngIf="!loading">
     <ion-list>
       <ion-item *ngFor="let movie of movies" text-wrap>
