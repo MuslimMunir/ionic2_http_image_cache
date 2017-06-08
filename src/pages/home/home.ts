@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
 import { CustomHttp } from '../../services/http.service';
 
 import { Movie } from '../../models/movie';
